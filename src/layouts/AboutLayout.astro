@@ -4,6 +4,10 @@ import Breadcrumbs from "@components/Breadcrumbs.astro";
 import Footer from "@components/Footer.astro";
 import Header from "@components/Header.astro";
 import Layout from "./Layout.astro";
+import Hr from "@components/Hr.astro";
+import RssLink from "@components/RssLink.astro";
+import LinkButton from "@components/LinkButton.astro";
+import Socials from "@components/Socials.astro";
 
 export interface Props {
   frontmatter: {
@@ -22,7 +26,40 @@ const { frontmatter } = Astro.props;
     <section id="about" class="mb-28 prose max-w-3xl prose-img:border-0">
       <h1 class="text-2xl sm:text-3xl tracking-wider">{frontmatter.title}</h1>
       <slot />
+      <Hr noPadding />
+      <section id="hero">
+        <RssLink />
+        <p>
+          このサイトは
+          <LinkButton
+            className="hover:text-skin-accent underline underline-offset-4 decoration-dashed"
+            href="https://github.com/satnaing/astro-paper"
+            blank
+          >
+            astro-paper
+          </LinkButton>
+          をもとに作成しています。
+        </p>
+      </section>
     </section>
   </main>
   <Footer />
 </Layout>
+
+<style>
+  /* ===== Hero Section ===== */
+  #hero {
+    @apply px-0;
+  }
+  #hero p {
+    @apply my-2;
+  }
+  .social-wrapper {
+    @apply flex flex-col sm:flex-row sm:items-center mt-4 mb-6;
+  }
+  .social-links {
+    @apply whitespace-nowrap mr-2 sm:mb-0 mb-1;
+  }
+
+  /* ===== Featured & Recent Posts Sections ===== */
+</style>

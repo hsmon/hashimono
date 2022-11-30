@@ -58,7 +58,7 @@ module.exports = {
       transparent: "transparent",
     },
     fontFamily: {
-      mono: ["IBM Plex Mono", "monospace"],
+      mono: ["Noto Sans JP", "Helvetica Neue" , "Helvetica" , "Arial" , "Verdana" , "Roboto" , "游ゴシック" , "Yu Gothic" , "游ゴシック体" , "YuGothic" , "ヒラギノ角ゴ Pro W3" , "Hiragino Kaku Gothic Pro" , "Meiryo UI" , "メイリオ" , "Meiryo" , "ＭＳ Ｐゴシック" , "MS PGothic", "sans-serif"],
     },
     // },
   },

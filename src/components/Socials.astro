@@ -1,6 +1,7 @@
 ---
 import { SOCIALS } from "src/config";
 import LinkButton from "./LinkButton.astro";
+import RssLink from "./RssLink.astro";
 import socialIcons from "@assets/socialIcons";
 
 export interface Props {
@@ -22,6 +23,7 @@ const { centered = false } = Astro.props;
       </LinkButton>
     ))
   }
+  <RssLink />
 </div>
 
 <style>
