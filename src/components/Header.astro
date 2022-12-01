@@ -1,10 +1,7 @@
 ---
-import { LOGO_IMAGE, SITE } from "src/config";
+import { SITE } from "src/config";
 import Hr from "./Hr.astro";
 import LinkButton from "./LinkButton.astro";
-
-import logoPNG from "/assets/logo.png";
-import logoSVG from "/assets/logo.svg";
 
 export interface Props {
   activeNav?: "posts" | "tags" | "about" | "search";
@@ -30,18 +27,7 @@ const { activeNav } = Astro.props;
               d="M22 12.407c-2.114 1.587-5.729 2.593-10 2.593s-7.886-1.006-10-2.593v2.593c0 1.889 4.276 4 10 4s10-2.111 10-4v-2.593zm-10-7.407c-5.724 0-10 2.112-10 4s4.276 4 10 4 10-2.112 10-4-4.276-4-10-4zm12 10c0 3.421-5.159 6-12 6s-12-2.579-12-6v-6c0-3.42 5.159-6 12-6s12 2.58 12 6v6z"
             ></path>
           </svg>
-          {
-            LOGO_IMAGE.enable ? (
-              <img
-                src={LOGO_IMAGE.svg ? logoSVG : logoPNG}
-                alt="AstroPaper Logo"
-                width={LOGO_IMAGE.width}
-                height={LOGO_IMAGE.height}
-              />
-            ) : (
-              SITE.title
-            )
-          }
+          {SITE.title}
         </a>
       </h1>
       <button class="hamburger-menu" aria-label="menu">
