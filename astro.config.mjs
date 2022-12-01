@@ -6,7 +6,7 @@ import remarkCollapse from "remark-collapse";
 import sitemap from "@astrojs/sitemap";
 import partytown from "@astrojs/partytown";
 import image from "@astrojs/image";
-import vercel from "@astrojs/vercel/serverless";
+import vercel from "@astrojs/vercel/static";
 
 // https://astro.build/config
 export default defineConfig({
@@ -44,6 +44,6 @@ export default defineConfig({
     },
     extendDefaultPlugins: true,
   },
-  output: "server",
+  output: "static",
   adapter: vercel(),
 });
