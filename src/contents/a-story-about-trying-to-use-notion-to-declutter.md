@@ -26,7 +26,7 @@ Notionでデイリーログを残すの参考になる<br>行動をログに残�
 
 そして、こんなかんじでとりあえずプロジェクトを立ち上げてみた
 
-<Image src='/assets/images/1.png' />
+<Image src='/assets/images/a-story-about-trying-to-use-notion-to-declutter/1.png' />
 
 **断捨離 2021 — 使わないものは手放して誰かのために**
 
@@ -34,7 +34,7 @@ Notionでデイリーログを残すの参考になる<br>行動をログに残�
 
 そして、我が部屋で使っていないものや着ていない服などをとりあえず Notion でまとめれたら今後管理しやすそうだと考え、実行してみることに。
 
-<Image src='/assets/images/2.png' />
+<Image src='/assets/images/a-story-about-trying-to-use-notion-to-declutter/2.png' />
 
 これはいい。
 
