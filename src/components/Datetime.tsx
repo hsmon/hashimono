@@ -35,9 +35,5 @@ const FormattedDatetime = ({ datetime }: { datetime: string }) => {
     timeZone: "UTC",
   });
 
-  return (
-    <>
-      {date}
-    </>
-  );
+  return <span>{date}</span>;
 };
