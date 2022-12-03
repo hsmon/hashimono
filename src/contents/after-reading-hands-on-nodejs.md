@@ -5,8 +5,8 @@ datetime: 2021-03-10T22:05:51Z
 featured: false
 draft: false
 tags:
-  - node.js
-  - O'Reilly
+  - nodejs
+  - oreilly
   - 学習ログ
 description: "ハンズオンnode.jsを読み終えての感想"
 ---

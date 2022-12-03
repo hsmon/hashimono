@@ -5,7 +5,7 @@ datetime: 2021-04-18T21:31:51Z
 featured: false
 draft: false
 tags:
-  - Notion
+  - notion
   - 雑記
 description: "Notionを活用して断捨離をしようとしている話"
 setup: |
