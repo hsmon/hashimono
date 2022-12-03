@@ -66,7 +66,7 @@
     prose-code:after:!content-[''] prose-code:before:!content-['']
     prose-strong:!text-skin-base prose-table:text-skin-base 
     prose-pre:!text-skin-base prose-a:!text-skin-base 
-    prose-hr:!border-skin-line prose-li:marker:!text-skin-accent 
+    prose-hr:!border-skin-line prose-li:marker:!text-skin-base 
     prose-blockquote:!border-l-skin-accent prose-blockquote:border-opacity-50;
   }
   .prose a {
@@ -78,7 +78,7 @@
     padding-left: 0.5714286em;
   }
   .prose h2#table-of-contents {
-    @apply mb-2;
+    @apply mb-8;
   }
   .prose details {
     @apply text-skin-base cursor-pointer inline-block select-none;

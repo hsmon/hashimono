@@ -28,23 +28,16 @@ export default function Datetime({ datetime, size = "sm", className }: Props) {
 const FormattedDatetime = ({ datetime }: { datetime: string }) => {
   const myDatetime = new Date(datetime);
 
-  const date = myDatetime.toLocaleDateString([], {
+  const date = myDatetime.toLocaleDateString("ja-JP", {
     year: "numeric",
     month: "long",
     day: "numeric",
-  });
-
-  const time = myDatetime.toLocaleTimeString([], {
-    hour: "2-digit",
-    minute: "2-digit",
+    timeZone: "UTC",
   });
 
   return (
     <>
       {date}
-      <span aria-hidden="true"> | </span>
-      <span className="sr-only">&nbsp;at&nbsp;</span>
-      {time}
     </>
   );
 };
