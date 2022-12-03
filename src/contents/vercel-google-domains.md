@@ -1,5 +1,5 @@
 ---
-title: VercelのサイトにGoogle Domainsを設定する
+title: Vercel × Google Domainsで独自ドメインを設定する方法
 author: hsmon
 datetime: 2022-12-03T18:01:51Z
 featured: true
@@ -7,7 +7,7 @@ draft: false
 tags:
   - vercel
   - google-domains
-description: "Vercel × Google Domainsで独自ドメインを設定する方法"
+description: "VercelのサイトにGoogle Domainsを設定する方法"
 setup: |
   import { Image } from '@astrojs/image/components'
 ---
