@@ -26,7 +26,7 @@ export default function Card({ href, post, secHeading = true }: Props) {
             <h3 className={styles.titleHeading}>{post.title}</h3>
           )}
         </a>
-        <p>{post.description}</p>
+        {/* <p>{post.description}</p> */}
         <Datetime datetime={post.datetime} />
       </article>
     </li>
