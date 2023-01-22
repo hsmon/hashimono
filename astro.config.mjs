@@ -52,5 +52,7 @@ export default defineConfig({
     extendDefaultPlugins: true,
   },
   output: "static",
-  adapter: vercel(),
+  adapter: vercel({
+    includeFiles: ["./generated/ogp.json"],
+  }),
 });

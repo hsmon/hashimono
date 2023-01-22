@@ -3,5 +3,15 @@
     "title": "Nuxt: The Intuitive Web Framework",
     "description": "Build your next Vue.js application with confidence using Nuxt. An open source framework under MIT license that makes web development simple and powerful.",
     "image": "https://nuxt.com/social.jpg"
+  },
+  "https://github.com/testing-library/vue-testing-library/blob/main/src/__tests__/vuetify.js": {
+    "title": "vue-testing-library/vuetify.js at main · testing-library/vue-testing-library",
+    "description": "🦎 Simple and complete Vue.js testing utilities that encourage good testing practices. - vue-testing...",
+    "image": "https://opengraph.githubassets.com/b2d95a45a374fa10502b25aac5c0e1465ec3e74b71ca69af83a69a49ca196a22/testing-library/vue-testing-library"
+  },
+  "https://github.com/hsmon/nuxt3-vuetify-vitest-testing-library": {
+    "title": "GitHub - hsmon/nuxt3-vuetify-vitest-testing-library",
+    "description": "Contribute to hsmon/nuxt3-vuetify-vitest-testing-library development by creating an account on GitHu...",
+    "image": "https://opengraph.githubassets.com/0dd6bbdc70691fe808a98fa8f19084af5e5b0e202199f255b4292b10a716debe/hsmon/nuxt3-vuetify-vitest-testing-library"
   }
 }
