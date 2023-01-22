@@ -1,0 +1,91 @@
+---
+import { load } from "cheerio";
+import Image from "./Image.astro";
+import { writeFileSync, readFileSync } from "node:fs";
+
+type Props = {
+  url: string;
+};
+
+const { url } = Astro.props;
+
+const generatedFilePath = new URL(
+  import.meta.env.PROD ? "../generated/ogp.json" : "../../generated/ogp.json",
+  import.meta.url
+)
+
+const ogp = JSON.parse(readFileSync(generatedFilePath, "utf8"));
+
+let title: string = "";
+let description: string = "";
+let image: string = "";
+
+if (ogp[url]) {
+  title = ogp[url].title;
+  description = ogp[url].description;
+  image = ogp[url].image;
+} else {
+  const html = await fetch(url).then(res => res.text());
+  const $ = load(html);
+
+  title = $("meta[property='og:title']").attr("content") ?? $("title").text();
+  description =
+    $("meta[property='og:description']").attr("content") ??
+    $("meta[name='description']").attr("content") ??
+    "";
+  image =
+    $("meta[property='og:image']").attr("content") ??
+    $("meta[name='twitter:image']").attr("content") ??
+    "";
+
+  if (image && !image.startsWith("http")) {
+    image = new URL(image, url).toString();
+  }
+
+  if (import.meta.env.PROD) {
+    const ogp = JSON.parse(readFileSync(generatedFilePath, "utf8"));
+
+    writeFileSync(
+      generatedFilePath,
+      JSON.stringify(
+        {
+          ...ogp,
+          [url]: {
+            title,
+            description,
+            image,
+          },
+        },
+        null,
+        2
+      )
+    );
+  }
+}
+
+---
+
+<div class="flex border border-gray-600 p-4 gap-4 justify-between">
+  <div class="flex flex-col gap-2 flex-1">
+    <a href={url} target="_blank" class="font-semibold">
+      {title}
+    </a>
+    <span class="text-sm"
+      >{
+        description && description.length > 100
+          ? `${description?.slice(0, 100)}...`
+          : description
+      }</span
+    >
+  </div>
+  {
+    image && (
+      <Image
+        src={image}
+        className="h-10 object-contain sm:h-24"
+        alt="title"
+        isOptimization={false}
+      />
+    )
+  }
+</div>
