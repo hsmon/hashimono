@@ -1,5 +1,6 @@
 ---
 title: ホワイトリストを活用したAWS Lambda上でのCORSやCSRFの対策
+slug: aws-lambda-cors-csrf
 author: hsmon
 datetime: 2022-12-11T15:48:51Z
 featured: false
@@ -15,14 +16,14 @@ setup: |
   import { Image } from '@astrojs/image/components'
 ---
 
-API GatewayとLambdaを実装した際に、とある事情でAWS Lambda上でCORSの対応を行う必要がありました。  
-Lambdaではレスポンスヘッダに`Access-Control-Allow-Origin`の指定が複数できないらしく、そのまま複数のoriginを指定することができません。  
-そのため、Lambda上でホワイトリストを作成し、問い合わせが来たoriginとホワイトリストを比較し、マッチしていれば目的のレスポンスを返すようにします。
+API Gateway と Lambda を実装した際に、とある事情で AWS Lambda 上で CORS の対応を行う必要がありました。  
+Lambda ではレスポンスヘッダに`Access-Control-Allow-Origin`の指定が複数できないらしく、そのまま複数の origin を指定することができません。  
+そのため、Lambda 上でホワイトリストを作成し、問い合わせが来た origin とホワイトリストを比較し、マッチしていれば目的のレスポンスを返すようにします。
 
 ## ホワイトリストの作成
 
 まずは、ホワイトリストを作成します。
-Lambdaの環境変数にホワイトリストを設定しましょう。  
+Lambda の環境変数にホワイトリストを設定しましょう。  
 変数名は任意ですが、今回は`WHITELIST`とします。  
 値は、カンマ区切りで複数指定します。
 
@@ -30,11 +31,11 @@ Lambdaの環境変数にホワイトリストを設定しましょう。
 https://example.com,https://example2.com
 ```
 
-## Lambdaの実装
+## Lambda の実装
 
-ホワイトリストを作成したら、Lambdaの実装を行います。  
-今回は、Pythonで実装します。  
-Pythonの場合、ホワイトリストを環境変数から取得するには、`os.environ`を使用します。  
+ホワイトリストを作成したら、Lambda の実装を行います。  
+今回は、Python で実装します。  
+Python の場合、ホワイトリストを環境変数から取得するには、`os.environ`を使用します。  
 `lambda_handler`は後ほど実装します。
 
 ```python
@@ -82,10 +83,10 @@ def lambda_handler(event, context):
 こちらで実際にレスポンスヘッダに`Access-Control-Allow-Origin`が設定されていることを確認しましょう。
 問題がなければ、これで完了となります。
 
-## API Gatewayの設定
+## API Gateway の設定
 
-最後に、API Gatewayの設定を行います。  
-API Gatewayのリソースに`OPTIONS`メソッドを追加し、Lambdaのエンドポイントを指定しましょう。
+最後に、API Gateway の設定を行います。  
+API Gateway のリソースに`OPTIONS`メソッドを追加し、Lambda のエンドポイントを指定しましょう。
 
 参考記事  
 [https://www.tdi.co.jp/miso/aws-whitelist-api](https://www.tdi.co.jp/miso/aws-whitelist-api)
