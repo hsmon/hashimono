@@ -13,5 +13,25 @@
     "title": "GitHub - hsmon/nuxt3-vuetify-vitest-testing-library",
     "description": "Contribute to hsmon/nuxt3-vuetify-vitest-testing-library development by creating an account on GitHu...",
     "image": "https://opengraph.githubassets.com/0dd6bbdc70691fe808a98fa8f19084af5e5b0e202199f255b4292b10a716debe/hsmon/nuxt3-vuetify-vitest-testing-library"
+  },
+  "https://www.oreilly.co.jp/books/9784814400027/": {
+    "title": "O'Reilly Japan - マイクロフロントエンド",
+    "description": "DAZNでアーキテクトを務めた著者が、マイクロフロントエンドアーキテクチャの概念、長所と短所、導入のポイントなどを俯瞰的に説明します。プロジェクトに適したアーキテクチャをどのように見極めるべきかについて、デプロイ可能性、モジュール性、テスト容易性、パフォーマンス、開発者体験といった観点から、多角的に分析することの重要性を強調します。また、マイクロフロントエンドを導入する予定がない組織にとっても、自律性、生産性の高いチーム作りのヒントを得ることができます。巻末の付録では、開発の最前線で活躍する8人にインタビュー。マイクロフロントエンドの威力、可能性、落とし穴など、開発現場の貴重な「生の声」を収録。一筋縄ではいかない開発の風景を垣間見ることができます。実装サンプルはすべてGitHubから利用可能です。",
+    "image": "https://www.oreilly.co.jp/books/images/picture_large978-4-8144-0002-7.jpeg"
+  },
+  "https://engineering.mercari.com/blog/entry/2018-12-06-162827/": {
+    "title": "フロントエンドエンジニアは Micro Frontends の夢を見るか | メルカリエンジニアリング",
+    "description": "Mercari Advent Calendar 2018 の6日目はフロントエンドチームの @vwxyutarooo がお送りします。このタイトルが言いたくて Micro Frontends の記事を書きました。皆さんは Micro Fro",
+    "image": "https://storage.googleapis.com/prd-engineering-asset/2018/12/1a38175c-20181206021034.jpg"
+  },
+  "https://intro-to-micro-frontends.netlify.app/contents/microfrontends/10_overview_of_micro_frontends.html": {
+    "title": "マイクロフロントエンド · マイクロフロントエンド入門",
+    "description": "",
+    "image": ""
+  },
+  "https://webpack.js.org/concepts/module-federation/": {
+    "title": "Module Federation | webpack",
+    "description": "webpack is a module bundler. Its main purpose is to bundle JavaScript files for usage in a browser, yet it is also capable of transforming, bundling, or packaging just about any resource or asset.",
+    "image": "https://webpack.js.org/icon-pwa-512x512.d3dae4189855b3a72ff9.png"
   }
 }
