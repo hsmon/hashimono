@@ -18,10 +18,15 @@ module.exports = {
       sm: "640px",
     },
 
+
     // Uncomment the following extend
     // if existing Tailwind color palette will be used
 
-    // extend: {
+    extend: {
+      aspectRatio: {
+        '4/3': '4 / 3',
+      },
+    },
     textColor: {
       skin: {
         base: withOpacity("--color-text-base"),

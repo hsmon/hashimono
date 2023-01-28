@@ -7,10 +7,14 @@ import sitemap from "@astrojs/sitemap";
 import partytown from "@astrojs/partytown";
 import image from "@astrojs/image";
 import vercel from "@astrojs/vercel/static";
+import mdx from "@astrojs/mdx";
 
 // https://astro.build/config
 export default defineConfig({
   site: "https://hashimono.com/",
+  experimental: {
+    contentCollections: true,
+  },
   integrations: [
     tailwind({
       config: {
@@ -25,7 +29,10 @@ export default defineConfig({
       },
     }),
     image({
-      serviceEntryPoint: "@astrojs/image/sharp",
+      // serviceEntryPoint: "@astrojs/image/sharp",
+    }),
+    mdx({
+      draft: true,
     }),
   ],
   markdown: {
@@ -45,5 +52,7 @@ export default defineConfig({
     extendDefaultPlugins: true,
   },
   output: "static",
-  adapter: vercel(),
+  adapter: vercel({
+    includeFiles: ["./generated/ogp.json"],
+  }),
 });

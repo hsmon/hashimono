@@ -1,0 +1,73 @@
+---
+title: Vercel × Google Domainsで独自ドメインを設定する方法
+author: hsmon
+datetime: 2022-12-03T18:01:51Z
+featured: true
+draft: false
+tags:
+  - vercel
+  - google-domains
+description: "VercelのサイトにGoogle Domainsを設定する方法"
+---
+
+このサイトは Vercel でホスティングしており、Google Domains で購入したドメインを設定したので備忘録として残しておきます。
+
+## Google Domains でドメインの購入
+
+まずは[Google Domains](https://domains.google/)でドメインを購入します。（購入方法は割愛します。）
+
+ドメインを購入したら、Vercel のプロジェクトの設定からドメインを設定します。
+
+## Vercel でドメインの設定
+
+購入したドメインを Vercel のプロジェクトに設定します。
+
+1. Vercel のコンソール画面上にて目的のプロジェクトを選択します。
+2. `Settings`→`Domains`の順で選択し、以下の入力欄から Google Domains で購入したドメイン名を入力して Add ボタンを押下します。
+
+<img src="/assets/images/vercel-google-domains/1.png" />
+
+3. 押下後、以下画面が表示されるので、任意の箇所を選択します。（特別な理由がない限り`Recommended`を選択すると良いでしょう）今回は`Recommended`を選択します。
+
+<img src="/assets/images/vercel-google-domains/2.png" />
+
+4. 追加後、以下一覧画面に追加したドメインが表示されます。（通常のドメインと www のサブドメインが追加されます）  
+   また、A レコードとして`76.76.21.21`、www 側では CNAME として`cname.vercel-dns.com.`が表示されていますが、Google Domains 側で DNS レコードの設定を行いますのでメモなど残しておきましょう。  
+   問題なく設定が完了したら`Invalid Configuration`が`Valid Configuration`に変化します。
+
+<img src="/assets/images/vercel-google-domains/3.png" />
+
+5. Google Domains のコンソール画面上にて目的のドメインを選択し、「DNS」を選択します。
+
+<img src="/assets/images/vercel-google-domains/4.png" />
+
+6. 今回は、A レコードと CNAME レコードを設定します。  
+   A レコードには、  
+   「ホスト名」欄は空のまま、  
+   「タイプ」欄は`A`、  
+   「データ」欄には Vercel のプロジェクトの設定画面でメモした`76.76.21.21`を設定します。
+
+<img src="/assets/images/vercel-google-domains/5.png" />
+
+7. 保存を押下すると、以下のように設定が反映されます。
+
+<img src="/assets/images/vercel-google-domains/6.png" />
+
+8. Vercel 側の画面に戻ると、以下のように`Valid Configuration`に変化していることが確認できます。  
+   また同時に、SSL 証明書の設定も行ってくれます！  
+   これに続いて CNAME レコードの設定も行いましょう。  
+   Google Domains 側に戻り、新しく`カスタム レコードを管理`→`新しいレコードを作成`を押下します。
+
+<img src="/assets/images/vercel-google-domains/7.png" />
+
+9. CNAME レコードには、  
+   「ホスト名」欄は`www`、  
+   「タイプ」欄は`CNAME`、  
+   「データ」欄には Vercel のプロジェクトの設定画面でメモした`cname.vercel-dns.com.`を設定します。
+
+<img src="/assets/images/vercel-google-domains/8.png" />
+
+10. 問題がなければ、以下のように設定が反映されます。  
+    以上で、Google Domains と Vercel の設定は完了です！お疲れさまでした！
+
+<img src="/assets/images/vercel-google-domains/9.png" />

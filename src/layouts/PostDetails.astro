@@ -11,7 +11,7 @@ export interface Props {
   post: MarkdownInstance<Frontmatter>;
 }
 
-const { frontmatter, Content } = Astro.props.post;
+const { frontmatter, Content, compiledContent } = Astro.props.post;
 
 const { title, author, description, ogImage, datetime, tags } = frontmatter;
 ---
